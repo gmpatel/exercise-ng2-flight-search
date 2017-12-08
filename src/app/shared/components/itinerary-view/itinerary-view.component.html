@@ -1,0 +1,20 @@
+<div class="itinerary-view">
+	<div class="content no-itinerary" *ngIf="!data.AirlineName">
+		<h3>No matching Itinerary Found</h3>
+	</div>
+	<div class="content clearfix" *ngIf="data.AirlineName">
+		<div class="logo">
+			<img [src]="data.AirlineLogoAddress" />
+		</div>
+		<div class="info">
+			<h3>{{data.AirlineName}}</h3>
+			<h5>
+				Inbound Time: {{data.InboundFlightsDuration}} | Outbound Time: {{data.OutboundFlightsDuration}}
+			</h5>
+			<!--<h4>Total Stops: {{data.Stops}}</h4>-->
+		</div>
+		<div class="price">
+			<h3>{{data.TotalAmount | currency:'USD':true:'1.2-2'}}</h3>
+		</div>
+	</div>
+</div>

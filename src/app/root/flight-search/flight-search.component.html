@@ -1,0 +1,89 @@
+<div class="top-section">
+	<div class="container">
+		<div class="search-form clearfix">
+			<form (ngSubmit)="onSubmit()">
+				<table class="full-width" cellspacing="0">
+					<tr>
+						<td>
+							<md-input-container class="example-full-width">
+								<input mdInput placeholder="Departing From"
+								       [(ngModel)]="fromAirport" name="from" #from="ngModel">
+							</md-input-container>
+						</td>
+						<td class="second">
+							<md-input-container class="example-full-width">
+								<input mdInput placeholder="Going To"
+								       [(ngModel)]="toAirport" name="to" #to="ngModel">
+							</md-input-container>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<md2-datepicker type="date"
+							                placeholder="Flying On"
+							                [(ngModel)]="leavingOn" name="leavingOn" #leavingon="ngModel"
+							                format="DD/MM/YYYY">
+							</md2-datepicker>
+						</td>
+						<td class="second">
+							<md2-datepicker type="date"
+							                placeholder="Returning Back"
+							                [(ngModel)]="returningBackOn" name="comingBack" #comingback="ngModel"
+							                format="DD/MM/YYYY">
+							</md2-datepicker>
+						</td>
+					</tr>
+				</table>
+				<button md-raised-button class="pull-right bg-main" type="submit">Search</button>
+			</form>
+			<div class="tag-line">
+				<h2>Find you next flight here ...</h2>
+				<p>
+					<i class="material-icons big">flight_takeoff</i>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="break">
+	<div class="container" *ngIf="foundItinerary">
+		<p>Following itineraries were found for your search ...</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="itinerary-list" *ngIf="foundItinerary">
+		<div class="search clearfix">
+			<h4 class="pull-left">Filter Itineraries</h4>
+			<div class="search-section">
+				<label>
+					Amount
+				</label>
+				<span>
+			<md-input-container align="right">
+				<input mdInput placeholder="min"
+				       [(ngModel)]="minAmount" name="minamount" #minamount="ngModel">
+			</md-input-container>
+		</span>
+				<span>
+			<md-input-container>
+				<input mdInput placeholder="max"
+				       [(ngModel)]="maxAmount" name="maxamount" #maxamount="ngModel">
+			</md-input-container>
+		</span>
+			</div>
+			<div class="search-section">
+				<md-select placeholder="Airlines" [(ngModel)]="selectedAirline" name="airline">
+					<md-option *ngFor="let airline of airlines" [value]="airline">
+						{{airline}}
+					</md-option>
+				</md-select>
+			</div>
+		</div>
+		<div *ngFor="let itinerary of foundItinerary | airlines:selectedAirline:minamount.value:maxamount.value">
+			<itinerary-view [data]="itinerary" ></itinerary-view>
+		</div>
+	</div>
+</div>
+

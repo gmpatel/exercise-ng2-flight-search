@@ -1,0 +1,104 @@
+@import "./../../../theme";
+
+:host {
+	md-input-container {
+		width: 100%;
+	}
+	
+	div.top-section {
+		background-color: $main_color;
+	}
+	
+	md2-datepicker {
+		width: 100%;
+		max-width: none;
+	}
+	
+	td.second {
+		padding-left: 15px;
+	}
+	
+	div.break {
+		background-color: $secondary_color;
+		height: 50px;
+		color: white;
+		font-family: 'Dancing Script', cursive;
+		font-size: 25px;
+		padding-top: 7px;
+		p {
+			opacity: 0.7;
+		}
+	}
+	
+	div.search-form {
+		background-color: #efefef;
+		margin: 70px 0;
+		-webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+		box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+		
+		form {
+			float: left;
+			padding: 20px;
+			width: 50%;
+			table {
+				width: 100%;
+			}
+			border-left: 1px solid $main_color;
+			border-top: 1px solid $main_color;
+			border-bottom: 1px solid $main_color;
+		}
+		
+		div.tag-line {
+			float: left;
+			width: 50%;
+			height: 194px;
+			background-color: $secondary_color;
+			font-family: 'Dancing Script', cursive;
+			color: $main_color;
+			padding: 20px;
+			h2, h3, p {
+				text-align: center;
+			}
+		}
+		
+	}
+	
+	div.itinerary-list {
+		margin: 70px auto;
+		> div {
+			margin-top: 8px;
+		}
+	}
+	
+	div.search {
+		h4 {
+			margin-top: 16px;
+			margin-left: 10px;
+		}
+		div.search-section {
+			float: right;
+			margin-left: 50px;
+			&:first-of-type {
+				margin-right: 0;
+			}
+			
+			span {
+				margin-left: 20px;
+				text-align: right;
+			}
+			
+			md-input-container {
+				width: 100px;
+			}
+			
+			md-select {
+				margin-top: 5px;
+			}
+			
+			md-select {
+				width: 300px;
+			}
+		}
+	}
+}

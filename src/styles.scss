@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import 'theme.scss';
+
+body {
+	font-family:Roboto,"Helvetica Neue",sans-serif;
+}
+
+md-input-container {
+	label {
+		font-weight: normal !important;
+	}
+}
+
+.material-icons.big {
+	font-size: 80px;
+}
+
+.bg-gold {
+	background-color: gold;
+}
+
+.bg-main {
+	background-color: $main_color;
+}
+
+.md2-datepicker-header {
+	background-color: $main_color !important;
+	span {
+		color: #222;
+	}
+}
+
+.mat-input-underline .mat-input-ripple {
+	background-color: black;
+}
+
+.mat-input-placeholder.mat-focused {
+	color: black;
+}
+
+.md2-datepicker-footer .md2-button {
+	color: black !important;
+}
+
+.md2-calendar-day.today {
+	color: black !important;
+	font-weight: bold;
+}
+
+.md2-calendar-day.today.focus {
+	color: white !important;
+}
+
+.md2-calendar-day.selected, .md2-calendar-day.selected:hover {
+	background: black !important;
+}
+
+md2-datepicker:focus .md2-datepicker-placeholder {
+	color: black !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled) .mat-select-trigger {
+	color: black !important;
+}
+
+.mat-select:focus:not(.mat-select-disabled) .mat-select-underline {
+	background-color: black !important;
+}
+
+//.mat-option.mat-selected {
+//	color: black !important;
+//}
+
+.mat-select:focus:not(.mat-select-disabled) .mat-select-arrow {
+	color: black !important;
+}

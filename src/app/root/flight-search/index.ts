@@ -1,0 +1,1 @@
+export { FlightSearchComponent } from './flight-search.component';
